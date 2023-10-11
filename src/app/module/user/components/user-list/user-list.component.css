@@ -13,6 +13,14 @@
     transform: translate(-50%, -50%);
 }
 
+#main-container {
+    min-height: 100vh;
+    background: url(/assets/images/background.jpg) center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main.table {
     width: 82vw;
     height: 90vh;

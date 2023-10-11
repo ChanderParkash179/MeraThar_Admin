@@ -1,31 +1,33 @@
-<div class="container">
-    <main class="table">
-        <section class="table__header mt-1">
-            <h1>Users</h1>
-        </section>
-        <section class="table__body">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Gender</th>
-                        <th>Social</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let user of users">
-                        <td>{{ user.id }}</td>
-                        <td>{{ user.firstName }}</td>
-                        <td>{{ user.lastName || 'NULL'}}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.gender }}</td>
-                        <td>{{ user.social }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+<div id="main-container">
+    <div class="container">
+        <main class="table">
+            <section class="table__header mt-1">
+                <h1>Users</h1>
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Social</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.lastName || 'NULL'}}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.gender }}</td>
+                            <td>{{ user.social }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </div>

@@ -6,6 +6,14 @@
     font-family: sans-serif;
 }
 
+#main-container {
+    min-height: 100vh;
+    background: url(/assets/images/background.jpg) center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     position: absolute;
     top: 50%;
