@@ -1,31 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../service/user.service';
-import { User } from 'src/app/model/user';
+import { City } from 'src/app/model/city';
+import { CityService } from '../../service/city.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-city-list',
+  templateUrl: './city-list.component.html',
+  styleUrls: ['./city-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class CityListComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers();
   }
 
-  constructor(private _userService: UserService) { }
+  constructor(private _cityService: CityService) { }
 
-  users?: User[] = [];
+  cities?: City[] = [];
 
   responseCode?: string;
   responseMessage?: string;
 
   getUsers() {
-    this._userService.fetchUsers().subscribe((response: any) => {
+    this._cityService.fetchCities().subscribe((response: any) => {
       if (response.responseCode === 'SUCCESS_200') {
         this.responseCode = response.responseCode;
         this.responseMessage = response.responseMessage;
-        this.users = response.responseData.users;
+        this.cities = response.responseData.cities;
       } else {
         this.responseCode = response.responseCode;
         this.responseMessage = response.responseMessage;

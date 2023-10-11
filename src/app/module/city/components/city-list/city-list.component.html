@@ -1,0 +1,23 @@
+<div class="container">
+    <main class="table">
+        <section class="table__header mt-1">
+            <h1>Cities</h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let city of cities">
+                        <td>{{ city.id }}</td>
+                        <td>{{ city.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>

@@ -4,7 +4,6 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { DeleteUserComponent } from './components/delete-user/delete-user.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
-import { UserComponent } from './user.component';
 
 const routes: Routes = [
   {

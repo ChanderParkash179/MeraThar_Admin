@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserModule } from './module/user/user.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CityModule } from './module/city/city.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
     UserModule,
-    NgbModule
+    CityModule
   ],
   providers: [],
   bootstrap: [AppComponent]
