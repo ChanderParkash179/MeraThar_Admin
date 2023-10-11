@@ -9,10 +9,14 @@ import { UserModule } from './module/user/user.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CityModule } from './module/city/city.module';
 import { VehicleModule } from './module/vehicle/vehicle.module';
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
