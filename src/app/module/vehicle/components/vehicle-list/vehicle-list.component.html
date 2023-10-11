@@ -1,0 +1,33 @@
+<div class="container">
+    <main class="table">
+        <section class="table__header mt-1">
+            <h1>Vehicles</h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Phone</th>
+                        <th>Rating</th>
+                        <th>Transport</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let vehicle of vehicles">
+                        <td>{{ vehicle.id }}</td>
+                        <td>{{ vehicle.name }}</td>
+                        <td>Rs. {{ vehicle.price }}</td>
+                        <td>{{ vehicle.phone }}</td>
+                        <td>{{ vehicle.rating }} ☆</td>
+                        <td>{{ vehicle.transport }}</td>
+                        <td>{{ vehicle.type }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>

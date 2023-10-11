@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { UserModule } from './module/user/user.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CityModule } from './module/city/city.module';
+import { VehicleModule } from './module/vehicle/vehicle.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CityModule } from './module/city/city.module';
     FormsModule,
     NgbModule,
     UserModule,
-    CityModule
+    CityModule,
+    VehicleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
