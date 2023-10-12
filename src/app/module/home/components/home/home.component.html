@@ -42,7 +42,7 @@
                         experience for tourists and residents alike.</p>
 
                     <div class="d-grid gap-2">
-                        <button type="button" id="btn" class="btn btn-warning btn-sm text-dark"
+                        <button type="button" id="btn" class="btn btn-primary btn-sm text-light"
                             routerLink="/city/list">CITIES</button>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                         memorable and enjoyable.</p>
 
                     <div class="d-grid gap-2">
-                        <button type="button" id="btn" class="btn btn-warning btn-sm text-dark"
+                        <button type="button" id="btn" class="btn btn-success btn-sm text-light"
                             routerLink="/vehicle/list">VEHICLES</button>
                     </div>
                 </div>
@@ -96,8 +96,60 @@
                         helping travelers make informed decisions when exploring new destinations.</p>
 
                     <div class="d-grid gap-2">
-                        <button type="button" id="btn" class="btn btn-warning btn-sm text-dark"
+                        <button type="button" id="btn" class="btn btn-dark btn-sm text-light"
                             routerLink="/location/list">LOCATIONS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <div class="card p-2 border border-warning rounded">
+            <div class="row">
+                <div class="col-md-4">
+                    <img [src]="hotelImageUrl" alt="user using phone" class="img-fluid border border-primary rounded">
+                </div>
+                <div class="col-md-8">
+                    <h2 class="card-title">Hotels</h2>
+
+                    <p>Hotels play a pivotal role in the tourism industry by providing essential accommodation services
+                        to travelers. They offer a range of lodging options, catering to various budgets and
+                        preferences, ensuring a comfortable and secure place to stay. Additionally, hotels often act as
+                        information hubs, offering tourists guidance on local attractions and amenities. They contribute
+                        to the overall travel experience, promoting tourism by creating memorable, convenient, and
+                        enjoyable stays for visitors, thereby sustaining and enhancing the appeal of a destination.</p>
+
+                    <div class="d-grid gap-2">
+                        <button type="button" id="btn" class="btn btn-danger btn-sm text-light"
+                            routerLink="/hotel/list">HOTELS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <div class="card p-2 border border-warning rounded">
+            <div class="row">
+                <div class="col-md-4">
+                    <img [src]="restaurantImageUrl" alt="user using phone"
+                        class="img-fluid border border-primary rounded">
+                </div>
+                <div class="col-md-8">
+                    <h2 class="card-title">Restaurants</h2>
+
+                    <p>Restaurants play a vital role in the tourism industry by providing visitors with a taste of local
+                        culture and cuisine. They serve as a gateway to experiencing the flavors of a destination,
+                        creating memorable dining experiences for tourists. Additionally, restaurants contribute to the
+                        local economy by generating employment and supporting the supply chain of food and beverages.
+                        They enhance the overall tourism experience, making it more immersive and satisfying, while also
+                        promoting the region's culinary identity, ultimately enticing more travelers to explore the
+                        area.</p>
+
+                    <div class="d-grid gap-2">
+                        <button type="button" id="btn" class="btn btn-info btn-sm text-dark"
+                            routerLink="/restaurant/list">RESTAURANTS</button>
                     </div>
                 </div>
             </div>

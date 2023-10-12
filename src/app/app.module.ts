@@ -13,6 +13,8 @@ import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { LocationModule } from './module/location/location.module';
 import { HomeModule } from './module/home/home.module';
+import { HotelModule } from './module/hotel/hotel.module';
+import { RestaurantModule } from './module/restaurant/restaurant.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HomeModule } from './module/home/home.module';
     UserModule,
     CityModule,
     VehicleModule,
-    LocationModule
+    LocationModule,
+    HotelModule,
+    RestaurantModule
   ],
   providers: [],
   bootstrap: [AppComponent]

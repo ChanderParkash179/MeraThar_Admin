@@ -11,4 +11,6 @@ export class HomeComponent {
   cityImageUrl: string = 'https://shorturl.at/bptWZ';
   vehicleImageUrl: string = 'https://shorturl.at/dmUY4';
   locationImageUrl: string = 'https://shorturl.at/uEQT2';
+  hotelImageUrl: string = 'https://shorturl.at/qvWY1';
+  restaurantImageUrl: string = 'https://shorturl.at/bxOY8';
 }
