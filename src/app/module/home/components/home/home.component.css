@@ -3,3 +3,7 @@
     font-weight: bold;
     letter-spacing: 0.35px;
 }
+
+.container div .card {
+    margin-top: 2%;
+}

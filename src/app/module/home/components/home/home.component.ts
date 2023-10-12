@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
   userImageUrl: string = 'https://shorturl.at/enMOX';
+  cityImageUrl: string = 'https://shorturl.at/bptWZ';
+  vehicleImageUrl: string = 'https://shorturl.at/dmUY4';
+  locationImageUrl: string = 'https://shorturl.at/uEQT2';
 }
