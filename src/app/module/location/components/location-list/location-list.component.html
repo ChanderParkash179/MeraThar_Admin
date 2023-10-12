@@ -1,0 +1,29 @@
+<div id="main-container">
+    <div class="container">
+        <main class="table">
+            <section class="table__header mt-1">
+                <h1>Users</h1>
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let location of locations">
+                            <td>{{ location.id }}</td>
+                            <td>{{ location.name }}</td>
+                            <td><a [href]="location.location" target="_blank">{{ location.location }}</a></td>
+                            <td>{{ location.description }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</div>
