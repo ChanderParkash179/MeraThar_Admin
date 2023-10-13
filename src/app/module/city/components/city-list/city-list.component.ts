@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { City } from 'src/app/model/city';
 import { CityService } from '../../service/city.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-city-list',
@@ -13,7 +14,7 @@ export class CityListComponent implements OnInit {
     this.getUsers();
   }
 
-  constructor(private _cityService: CityService) { }
+  constructor(private _cityService: CityService, private _router: Router) { }
 
   cities?: City[] = [];
 
@@ -33,5 +34,9 @@ export class CityListComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       console.error(error);
     });
+  }
+
+  addCity() {
+    this._router.navigate(['city/add']);
   }
 }

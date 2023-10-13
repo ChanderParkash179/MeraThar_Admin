@@ -1,1 +1,34 @@
-<p>add-city works!</p>
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <section class="table__body p-5">
+                <form [formGroup]="cityForm" (ngSubmit)="addCity()">
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="forCity" class="form-label m-1"><strong>Add City</strong></label>
+                            <input type="text" class="form-control p-2" id="forCity" formControlName="name">
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" id="btn" class="btn btn-primary p-2 text-light">Save</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <div class="row p-4">
+            <div class="alert">
+                <div *ngIf="responseCode === 'SUCCESS_201'" class="alert alert-success p-2" role="alert">
+                    {{ responseMessage }}
+                </div>
+                <div *ngIf="responseCode != 'SUCCESS_201' && responseCode != ''" class=" alert alert-danger p-2"
+                    role="alert">
+                    {{ responseMessage }}
+                </div>
+                <div *ngIf="responseCode === ''" class=" alert alert-warning p-2" role="alert">
+                    {{ responseMessage }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
