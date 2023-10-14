@@ -6,7 +6,8 @@
                     <div class="form-group">
                         <div class="mb-3">
                             <label for="forCity" class="form-label m-1"><strong>Add City</strong></label>
-                            <input type="text" class="form-control p-2" id="forCity" formControlName="name">
+                            <input type="text" class="form-control p-2" id="forCity" formControlName="name" required
+                                [placeholder]="enterCity">
                         </div>
                     </div>
                     <div class="d-grid gap-2">
@@ -19,10 +20,6 @@
         <div class="row p-4">
             <div class="alert">
                 <div *ngIf="responseCode === 'SUCCESS_201'" class="alert alert-success p-2" role="alert">
-                    {{ responseMessage }}
-                </div>
-                <div *ngIf="responseCode != 'SUCCESS_201' && responseCode != ''" class=" alert alert-danger p-2"
-                    role="alert">
                     {{ responseMessage }}
                 </div>
                 <div *ngIf="responseCode === ''" class=" alert alert-warning p-2" role="alert">

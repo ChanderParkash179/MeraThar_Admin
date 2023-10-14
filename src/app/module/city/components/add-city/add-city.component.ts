@@ -26,14 +26,12 @@ export class AddCityComponent implements OnInit {
 
   formInit() {
     this.cityForm = new FormGroup({
-      name: new FormControl('')
+      name: new FormControl('', [Validators.required, Validators.minLength(4)])
     });
-    console.log(this.cityForm);
   }
 
 
   addCity() {
-    console.log(this.cityForm);
     if (this.cityForm.valid) {
       const cityName = this.cityForm.value.name;
       this._cityService.saveCity(cityName).subscribe((response: any) => {
@@ -41,15 +39,16 @@ export class AddCityComponent implements OnInit {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;
           this.city = response.responseData.city;
+          this.cityForm.get('name')?.setValue('');
         } else {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;
           this.city = response.responseData.city;
+          this.cityForm.get('name')?.setValue('');
         }
       }, (error: HttpErrorResponse) => {
         console.error(error);
       });
     }
   }
-
 }
