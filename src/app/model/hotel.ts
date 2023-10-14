@@ -1,3 +1,5 @@
+import { City } from "./city";
+
 export interface Hotel {
 
     id?: number;
@@ -5,4 +7,5 @@ export interface Hotel {
     address?: string;
     phone?: string;
     rating?: number;
+    city?: City;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../../service/hotel.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Hotel } from 'src/app/model/hotel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hotel-list',
@@ -13,7 +14,7 @@ export class HotelListComponent implements OnInit {
     this.getHotels();
   }
 
-  constructor(private _hotelService: HotelService) { }
+  constructor(private _hotelService: HotelService, private _router: Router) { }
 
   hotels?: Hotel[] = [];
 
@@ -33,5 +34,9 @@ export class HotelListComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       console.error(error);
     });
+  }
+
+  addHotel() {
+    this._router.navigate(['hotel/add']);
   }
 }

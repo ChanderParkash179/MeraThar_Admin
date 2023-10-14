@@ -6,6 +6,7 @@ import { RestaurantListComponent } from './components/restaurant-list/restaurant
 import { AddRestaurantComponent } from './components/add-restaurant/add-restaurant.component';
 import { DeleteRestaurantComponent } from './components/delete-restaurant/delete-restaurant.component';
 import { UpdateRestaurantComponent } from './components/update-restaurant/update-restaurant.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { UpdateRestaurantComponent } from './components/update-restaurant/update
   ],
   imports: [
     CommonModule,
-    RestaurantRoutingModule
+    RestaurantRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class RestaurantModule { }

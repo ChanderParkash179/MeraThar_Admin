@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Hotel } from 'src/app/model/hotel';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -14,5 +15,9 @@ export class HotelService {
 
   fetchHotels(): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/hotel/get/list`, {});
+  }
+
+  saveHotel(hotel: Hotel): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/hotel/save`, hotel);
   }
 }

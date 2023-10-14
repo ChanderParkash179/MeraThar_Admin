@@ -6,6 +6,7 @@ import { UpdateHotelComponent } from './components/update-hotel/update-hotel.com
 import { AddHotelComponent } from './components/add-hotel/add-hotel.component';
 import { DeleteHotelComponent } from './components/delete-hotel/delete-hotel.component';
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { HotelListComponent } from './components/hotel-list/hotel-list.component
   ],
   imports: [
     CommonModule,
-    HotelRoutingModule
+    HotelRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class HotelModule { }

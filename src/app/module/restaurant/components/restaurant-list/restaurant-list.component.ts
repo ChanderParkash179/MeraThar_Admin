@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Restaurant } from 'src/app/model/restaurant';
 import { RestaurantService } from '../../service/restaurant.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -13,7 +14,7 @@ export class RestaurantListComponent implements OnInit {
     this.getRestaurants();
   }
 
-  constructor(private _restaurantService: RestaurantService) { }
+  constructor(private _restaurantService: RestaurantService, private _router: Router) { }
 
   restaurants?: Restaurant[] = [];
 
@@ -33,5 +34,9 @@ export class RestaurantListComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       console.error(error);
     });
+  }
+
+  addRestaurant() {
+    this._router.navigate(['restaurant/add']);
   }
 }
