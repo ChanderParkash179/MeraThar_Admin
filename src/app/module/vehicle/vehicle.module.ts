@@ -6,6 +6,7 @@ import { VehicleListComponent } from './components/vehicle-list/vehicle-list.com
 import { AddVehicleComponent } from './components/add-vehicle/add-vehicle.component';
 import { UpdateVehicleComponent } from './components/update-vehicle/update-vehicle.component';
 import { DeleteVehicleComponent } from './components/delete-vehicle/delete-vehicle.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { DeleteVehicleComponent } from './components/delete-vehicle/delete-vehic
   ],
   imports: [
     CommonModule,
-    VehicleRoutingModule
+    VehicleRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class VehicleModule { }

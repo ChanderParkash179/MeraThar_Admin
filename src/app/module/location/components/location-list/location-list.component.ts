@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Location } from 'src/app/model/location';
 import { LocationService } from '../../service/location.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-location-list',
@@ -13,7 +14,7 @@ export class LocationListComponent implements OnInit {
     this.getLocations();
   }
 
-  constructor(private _locationService: LocationService) { }
+  constructor(private _locationService: LocationService, private _router: Router) { }
 
   locations?: Location[] = [];
 
@@ -33,5 +34,9 @@ export class LocationListComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       console.error(error);
     });
+  }
+
+  addLocation() {
+    this._router.navigate(['location/add']);
   }
 }

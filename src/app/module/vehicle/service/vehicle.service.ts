@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Vehicle } from 'src/app/model/vehicle';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -15,4 +16,9 @@ export class VehicleService {
   fetchVehicles(): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/vehicle/get/list`, {});
   }
+
+  saveVehicle(vehicle: Vehicle): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/vehicle/save`, vehicle);
+  }
+
 }

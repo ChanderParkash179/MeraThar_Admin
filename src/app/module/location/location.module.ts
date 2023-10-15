@@ -6,6 +6,7 @@ import { DeleteLocationComponent } from './components/delete-location/delete-loc
 import { UpdateLocationComponent } from './components/update-location/update-location.component';
 import { LocationListComponent } from './components/location-list/location-list.component';
 import { AddLocationComponent } from './components/add-location/add-location.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { AddLocationComponent } from './components/add-location/add-location.com
   ],
   imports: [
     CommonModule,
-    LocationRoutingModule
+    LocationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class LocationModule { }

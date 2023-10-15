@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../../service/vehicle.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Vehicle } from 'src/app/model/vehicle';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -13,7 +14,7 @@ export class VehicleListComponent implements OnInit {
     this.getVehicles();
   }
 
-  constructor(private _vehicleService: VehicleService) { }
+  constructor(private _vehicleService: VehicleService, private _router: Router) { }
 
   vehicles?: Vehicle[] = [];
 
@@ -33,5 +34,9 @@ export class VehicleListComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       console.error(error);
     });
+  }
+
+  addVehicle() {
+    this._router.navigate(['vehicle/add']);
   }
 }

@@ -1,1 +1,59 @@
-<p>add-location works!</p>
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <section class="table__body p-5">
+                <form [formGroup]="locationForm" (ngSubmit)="addLocation()">
+                    <div class="row p-2">
+                        <div class="alert">
+                            <div *ngIf="responseCode === 'SUCCESS_201'" class="alert alert-success p-2" role="alert">
+                                {{ responseMessage }}
+                            </div>
+                            <div *ngIf="responseCode === ''" class=" alert alert-warning p-2" role="alert">
+                                {{ responseMessage }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-header">
+                        <h1 class="text-center">Add Location</h1>
+                    </div>
+                    <div id="form-container">
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forLocationName" class="form-label m-1"><strong>Enter Name</strong></label>
+                                <input type="text" class="form-control p-2" id="forLocationName" formControlName="name"
+                                    required [placeholder]="enterName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forLocationLocation" class="form-label m-1"><strong>Enter
+                                        Location</strong></label>
+                                <input type="text" class="form-control p-2" id="forLocationLocation"
+                                    formControlName="location" required [placeholder]="enterLocation">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forLocationDescription" class="form-label m-1"><strong>Enter
+                                        Description</strong></label>
+                                <input type="text" class="form-control p-2" id="forLocationDescription"
+                                    formControlName="description" required [placeholder]="enterDescription">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forLocationCity" class="form-label m-1"><strong>Enter City</strong></label>
+                                <input type="text" class="form-control p-2" id="forLocationCity" formControlName="city"
+                                    required [placeholder]="enterCity">
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" id="btn" [disabled]="!locationForm.valid"
+                                class="btn btn-primary p-2 text-light">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>

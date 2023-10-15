@@ -1,3 +1,5 @@
+import { City } from "./city";
+
 export interface Vehicle {
 
     id?: number;
@@ -7,4 +9,5 @@ export interface Vehicle {
     rating?: number;
     type?: string;
     transport?: string;
+    city?: City;
 }

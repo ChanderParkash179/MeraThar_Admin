@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Location } from 'src/app/model/location';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -14,5 +15,9 @@ export class LocationService {
 
   fetchLocations(): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/tourist-point/get/list`, {});
+  }
+
+  saveLocation(location: Location): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/tourist-point/save`, location);
   }
 }
