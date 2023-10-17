@@ -41,8 +41,8 @@ export class AddHotelComponent implements OnInit {
 
   addHotel() {
     if (this.hotelForm.valid) {
-      const hotlePayLoad = this.hotelForm.value;
-      this._hotelService.saveHotel(hotlePayLoad).subscribe((response: any) => {
+      const hotelPayLoad = this.hotelForm.value;
+      this._hotelService.saveHotel(hotelPayLoad).subscribe((response: any) => {
         if (response.responseCode === 'SUCCESS_201') {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;

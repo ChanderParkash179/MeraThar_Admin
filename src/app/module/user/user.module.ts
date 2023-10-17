@@ -6,6 +6,7 @@ import { DeleteUserComponent } from './components/delete-user/delete-user.compon
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,8 @@ import { AddUserComponent } from './components/add-user/add-user.component';
   imports: [
     CommonModule,
     UserRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class UserModule { }

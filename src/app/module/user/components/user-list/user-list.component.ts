@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { User } from 'src/app/model/user';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -13,7 +14,7 @@ export class UserListComponent implements OnInit {
     this.getUsers();
   }
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService, private _router: Router) { }
 
   users?: User[] = [];
 
@@ -33,5 +34,9 @@ export class UserListComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       console.error(error);
     });
+  }
+
+  addUser() {
+    this._router.navigate(['user/add']);
   }
 }

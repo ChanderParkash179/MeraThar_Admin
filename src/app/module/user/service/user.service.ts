@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Response } from 'src/app/model/response';
+import { User } from 'src/app/model/user';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -15,5 +16,9 @@ export class UserService {
 
   fetchUsers(): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/user/list`, {});
+  }
+
+  saveUser(user: User): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/user/register`, user);
   }
 }
