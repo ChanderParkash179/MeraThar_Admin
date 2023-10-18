@@ -3,6 +3,7 @@ import { CityService } from '../../service/city.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { City } from 'src/app/model/city';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-city',
@@ -11,7 +12,7 @@ import { City } from 'src/app/model/city';
 })
 export class AddCityComponent implements OnInit {
 
-  constructor(private _cityService: CityService) { }
+  constructor(private _cityService: CityService, private _router: Router) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -40,6 +41,10 @@ export class AddCityComponent implements OnInit {
           this.responseMessage = response.responseMessage;
           this.city = response.responseData.city;
           this.cityForm.get('name')?.setValue('');
+
+          setTimeout(() => {
+            this._router.navigate(['city/list']);
+          }, 1000);
         } else {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;

@@ -48,17 +48,40 @@
                         </div>
                         <div class="form-group">
                             <div class="mb-3">
-                                <label for="forVehicleType" class="form-label m-1"><strong>Enter Type</strong></label>
-                                <input type="text" class="form-control p-2" id="forVehicleType" formControlName="type"
-                                    required [placeholder]="enterType">
+                                <label class="form-label m-1"><strong>Enter Type</strong></label>
+                                <div id="selection">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="bus" formControlName="type"
+                                            value="BUS">BUS
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="bike" formControlName="type"
+                                            value="BIKE">BIKE
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="car" formControlName="type"
+                                            value="CAR">CAR
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="rikshaw" formControlName="type"
+                                            value="RIKSHAW">RIKSHAW
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="mb-3">
-                                <label for="forVehicleTransport" class="form-label m-1"><strong>Enter
-                                        Transport</strong></label>
-                                <input type="text" class="form-control p-2" id="forVehicleTransport"
-                                    formControlName="transport" required [placeholder]="enterTransport">
+                                <label class="form-label m-1"><strong>Enter Transport</strong></label>
+                                <div id="selection">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="private"
+                                            formControlName="transport" value="PRIVATE">PRIVATE
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="public"
+                                            formControlName="transport" value="PUBLIC">PUBLIC
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

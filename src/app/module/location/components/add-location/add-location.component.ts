@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../../service/location.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-location',
@@ -9,7 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./add-location.component.css']
 })
 export class AddLocationComponent implements OnInit {
-  constructor(private _locationService: LocationService) { }
+  constructor(private _locationService: LocationService, private _router: Router) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -45,6 +46,10 @@ export class AddLocationComponent implements OnInit {
           this.responseMessage = response.responseMessage;
           this.location = response.responseData.place;
           this.resetFormValues();
+
+          setTimeout(() => {
+            this._router.navigate(['location/list']);
+          }, 1000);
         } else {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;

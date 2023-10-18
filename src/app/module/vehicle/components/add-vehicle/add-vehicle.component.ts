@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../../service/vehicle.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Vehicle } from 'src/app/model/vehicle';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-vehicle',
@@ -10,7 +11,7 @@ import { Vehicle } from 'src/app/model/vehicle';
   styleUrls: ['./add-vehicle.component.css']
 })
 export class AddVehicleComponent implements OnInit {
-  constructor(private _vehicleService: VehicleService) { }
+  constructor(private _vehicleService: VehicleService, private _router: Router) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -20,8 +21,6 @@ export class AddVehicleComponent implements OnInit {
   enterPrice: string = 'Enter Vehicle Price';
   enterPhone: string = 'Enter Vehicle Phone';
   enterRating: string = 'Enter Vehicle Rating';
-  enterType: string = 'Enter Vehicle Type';
-  enterTransport: string = 'Enter Vehicle Transport';
   enterCity: string = 'Enter Vehicle City';
 
   vehicleForm!: FormGroup;
@@ -36,8 +35,8 @@ export class AddVehicleComponent implements OnInit {
       price: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
       rating: new FormControl('', [Validators.required]),
-      type: new FormControl('', [Validators.required]),
-      transport: new FormControl('', [Validators.required]),
+      type: new FormControl(''),
+      transport: new FormControl(''),
       city: new FormControl('', [Validators.required])
     });
   }
@@ -51,12 +50,16 @@ export class AddVehicleComponent implements OnInit {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;
           this.vehicle = response.responseData.vehicle;
-          // this.resetFormValues();
+          this.resetFormValues();
+
+          setTimeout(() => {
+            this._router.navigate(['vehicle/list']);
+          }, 1000);
         } else {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;
           this.vehicle = response.responseData.vehicle;
-          // this.resetFormValues();
+          this.resetFormValues();
         }
       }, (error: HttpErrorResponse) => {
         console.error(error)

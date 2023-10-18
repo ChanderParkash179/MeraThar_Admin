@@ -118,3 +118,7 @@ tbody td.active {
     justify-content: center;
     flex-direction: column;
 }
+
+#selection {
+    margin-left: 3%;
+}

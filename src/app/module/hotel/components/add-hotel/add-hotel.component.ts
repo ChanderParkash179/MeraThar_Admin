@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Hotel } from 'src/app/model/hotel';
 import { HotelService } from '../../service/hotel.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-hotel',
@@ -11,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AddHotelComponent implements OnInit {
 
-  constructor(private _hotelService: HotelService) { }
+  constructor(private _hotelService: HotelService, private _router: Router) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -48,6 +49,10 @@ export class AddHotelComponent implements OnInit {
           this.responseMessage = response.responseMessage;
           this.hotel = response.responseData.hotel;
           this.resetFormValues();
+
+          setTimeout(() => {
+            this._router.navigate(['hotel/list']);
+          }, 1000);
         } else {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;

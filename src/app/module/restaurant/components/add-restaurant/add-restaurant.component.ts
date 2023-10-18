@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RestaurantService } from '../../service/restaurant.service';
 import { Restaurant } from 'src/app/model/restaurant';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-restaurant',
@@ -11,7 +12,7 @@ import { Restaurant } from 'src/app/model/restaurant';
 })
 export class AddRestaurantComponent implements OnInit {
 
-  constructor(private _restaurantService: RestaurantService) { }
+  constructor(private _restaurantService: RestaurantService, private _router: Router) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -48,6 +49,10 @@ export class AddRestaurantComponent implements OnInit {
           this.responseMessage = response.responseMessage;
           this.restaurant = response.responseData.restaurant;
           this.resetFormValues();
+
+          setTimeout(() => {
+            this._router.navigate(['restaurant/list']);
+          }, 1000);
         } else {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;

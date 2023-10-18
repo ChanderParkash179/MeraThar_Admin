@@ -3,6 +3,7 @@ import { UserService } from '../../service/user.service';
 import { User } from 'src/app/model/user';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-user',
@@ -11,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AddUserComponent implements OnInit {
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService, private _router: Router) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -47,6 +48,10 @@ export class AddUserComponent implements OnInit {
           this.responseMessage = response.responseMessage;
           this.user = response.responseData.user;
           this.resetFormValues();
+
+          setTimeout(() => {
+            this._router.navigate(['user/list']);
+          }, 1000);
         } else {
           this.responseCode = response.responseCode;
           this.responseMessage = response.responseMessage;
