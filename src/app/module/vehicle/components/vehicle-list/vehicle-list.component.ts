@@ -17,6 +17,7 @@ export class VehicleListComponent implements OnInit {
   constructor(private _vehicleService: VehicleService, private _router: Router) { }
 
   vehicles?: Vehicle[] = [];
+  vehicle!: Vehicle;
 
   responseCode?: string;
   responseMessage?: string;
@@ -38,5 +39,28 @@ export class VehicleListComponent implements OnInit {
 
   addVehicle() {
     this._router.navigate(['vehicle/add']);
+  }
+
+
+  deleteVehicle(id: number) {
+    const vehicle = id;
+    this._vehicleService.deleteVehicle(vehicle).subscribe((response: any) => {
+      if (response.responseCode === 'SUCCESS_200') {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.vehicle = response.responseData.vehicle;
+        this.getVehicles();
+      } else {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.vehicle = response.responseData.vehicle;
+      }
+    }, (error: HttpErrorResponse) => {
+      console.error(error);
+    });
+  }
+
+  onDelete(id: any) {
+    this.deleteVehicle(id);
   }
 }

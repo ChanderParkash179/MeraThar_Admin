@@ -11,12 +11,16 @@
                         <tr>
                             <th>#ID</th>
                             <th>City</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let city of cities">
                             <td>{{ city.id }}</td>
                             <td>{{ city.name }}</td>
+                            <td><button type="button" (click)="onDelete(city.id)"
+                                    class="btn btn-danger p-1 text-light">Delete</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

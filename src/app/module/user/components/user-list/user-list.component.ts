@@ -17,6 +17,7 @@ export class UserListComponent implements OnInit {
   constructor(private _userService: UserService, private _router: Router) { }
 
   users?: User[] = [];
+  user!: User;
 
   responseCode?: string;
   responseMessage?: string;
@@ -38,5 +39,27 @@ export class UserListComponent implements OnInit {
 
   addUser() {
     this._router.navigate(['user/add']);
+  }
+
+  deleteUser(email: string) {
+    const userEmail = email;
+    this._userService.deleteUser(userEmail).subscribe((response: any) => {
+      if (response.responseCode === 'SUCCESS_205') {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.user = response.responseData.user;
+        this.getUsers();
+      } else {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.user = response.responseData.user;
+      }
+    }, (error: HttpErrorResponse) => {
+      console.error(error);
+    });
+  }
+
+  onDelete(email: any) {
+    this.deleteUser(email);
   }
 }

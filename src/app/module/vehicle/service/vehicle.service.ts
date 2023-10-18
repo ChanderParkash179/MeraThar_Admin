@@ -21,4 +21,8 @@ export class VehicleService {
     return this._http.post<Response>(`${this.BASE_URL}/city/vehicle/save`, vehicle);
   }
 
+  deleteVehicle(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/vehicle/delete`, { id });
+  }
+
 }

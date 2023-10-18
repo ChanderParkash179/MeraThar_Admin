@@ -13,6 +13,7 @@
                             <th>Name</th>
                             <th>Location</th>
                             <th>Description</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -21,6 +22,9 @@
                             <td>{{ location.name }}</td>
                             <td><a [href]="location.location" target="_blank">{{ location.location }}</a></td>
                             <td>{{ location.description }}</td>
+                            <td><button type="button" (click)="onDelete(location.id)"
+                                    class="btn btn-danger p-1 text-light">Delete</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

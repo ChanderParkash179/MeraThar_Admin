@@ -20,4 +20,8 @@ export class RestaurantService {
   saveRestaurant(restaurant: Restaurant): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/restaurant/save`, restaurant);
   }
+
+  deleteRestaurant(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/restaurant/delete`, { id });
+  }
 }

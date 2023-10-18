@@ -21,4 +21,10 @@ export class UserService {
   saveUser(user: User): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/user/register`, user);
   }
+
+  deleteUser(email: any): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/user/delete`, { email });
+  }
+
+
 }

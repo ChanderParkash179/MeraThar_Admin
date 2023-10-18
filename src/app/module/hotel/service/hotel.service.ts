@@ -20,4 +20,8 @@ export class HotelService {
   saveHotel(hotel: Hotel): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/hotel/save`, hotel);
   }
+
+  deleteHotel(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/hotel/delete`, { id });
+  }
 }

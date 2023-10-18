@@ -20,4 +20,8 @@ export class CityService {
   saveCity(name: City): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/save`, { name });
   }
+
+  deleteCity(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/delete`, { id });
+  }
 }

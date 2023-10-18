@@ -16,6 +16,7 @@
                             <th>Rating</th>
                             <th>Transport</th>
                             <th>Type</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,6 +28,9 @@
                             <td>{{ vehicle.rating }} ☆</td>
                             <td>{{ vehicle.transport }}</td>
                             <td>{{ vehicle.type }}</td>
+                            <td><button type="button" (click)="onDelete(vehicle.id)"
+                                    class="btn btn-danger p-1 text-light">Delete</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

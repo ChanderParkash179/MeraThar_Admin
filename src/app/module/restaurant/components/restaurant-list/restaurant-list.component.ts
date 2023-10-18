@@ -17,6 +17,7 @@ export class RestaurantListComponent implements OnInit {
   constructor(private _restaurantService: RestaurantService, private _router: Router) { }
 
   restaurants?: Restaurant[] = [];
+  restaurant!: Restaurant;
 
   responseCode?: string;
   responseMessage?: string;
@@ -38,5 +39,27 @@ export class RestaurantListComponent implements OnInit {
 
   addRestaurant() {
     this._router.navigate(['restaurant/add']);
+  }
+
+  deleteRestaurant(id: number) {
+    const restaurant = id;
+    this._restaurantService.deleteRestaurant(restaurant).subscribe((response: any) => {
+      if (response.responseCode === 'SUCCESS_200') {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.restaurant = response.responseData.restaurant;
+        this.getRestaurants();
+      } else {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.restaurant = response.responseData.restaurant;
+      }
+    }, (error: HttpErrorResponse) => {
+      console.error(error);
+    });
+  }
+
+  onDelete(id: any) {
+    this.deleteRestaurant(id);
   }
 }

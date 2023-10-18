@@ -17,6 +17,7 @@ export class LocationListComponent implements OnInit {
   constructor(private _locationService: LocationService, private _router: Router) { }
 
   locations?: Location[] = [];
+  location!: Location;
 
   responseCode?: string;
   responseMessage?: string;
@@ -38,5 +39,27 @@ export class LocationListComponent implements OnInit {
 
   addLocation() {
     this._router.navigate(['location/add']);
+  }
+
+  deleteLocation(id: number) {
+    const location = id;
+    this._locationService.deleteLocation(location).subscribe((response: any) => {
+      if (response.responseCode === 'SUCCESS_200') {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.location = response.responseData.location;
+        this.getLocations();
+      } else {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.location = response.responseData.location;
+      }
+    }, (error: HttpErrorResponse) => {
+      console.error(error);
+    });
+  }
+
+  onDelete(id: any) {
+    this.deleteLocation(id);
   }
 }

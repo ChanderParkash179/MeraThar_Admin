@@ -11,17 +11,18 @@ import { Router } from '@angular/router';
 })
 export class CityListComponent implements OnInit {
   ngOnInit(): void {
-    this.getUsers();
+    this.getCities();
   }
 
   constructor(private _cityService: CityService, private _router: Router) { }
 
   cities?: City[] = [];
+  city!: City;
 
   responseCode?: string;
   responseMessage?: string;
 
-  getUsers() {
+  getCities() {
     this._cityService.fetchCities().subscribe((response: any) => {
       if (response.responseCode === 'SUCCESS_200') {
         this.responseCode = response.responseCode;
@@ -38,5 +39,27 @@ export class CityListComponent implements OnInit {
 
   addCity() {
     this._router.navigate(['city/add']);
+  }
+
+  deleteCity(id: number) {
+    const city = id;
+    this._cityService.deleteCity(city).subscribe((response: any) => {
+      if (response.responseCode === 'SUCCESS_200') {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.city = response.responseData.city;
+        this.getCities();
+      } else {
+        this.responseCode = response.responseCode;
+        this.responseMessage = response.responseMessage;
+        this.city = response.responseData.city;
+      }
+    }, (error: HttpErrorResponse) => {
+      console.error(error);
+    });
+  }
+
+  onDelete(id: any) {
+    this.deleteCity(id);
   }
 }

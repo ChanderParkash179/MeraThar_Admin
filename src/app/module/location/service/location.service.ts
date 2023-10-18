@@ -20,4 +20,8 @@ export class LocationService {
   saveLocation(location: Location): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/tourist-point/save`, location);
   }
+
+  deleteLocation(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/tourist-point/delete`, { id });
+  }
 }
