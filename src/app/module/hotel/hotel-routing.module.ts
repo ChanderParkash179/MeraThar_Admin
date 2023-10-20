@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { AddHotelComponent } from './components/add-hotel/add-hotel.component';
-import { DeleteHotelComponent } from './components/delete-hotel/delete-hotel.component';
 import { UpdateHotelComponent } from './components/update-hotel/update-hotel.component';
 
 const routes: Routes = [
@@ -12,7 +11,6 @@ const routes: Routes = [
       { path: '', component: HotelListComponent },
       { path: 'list', component: HotelListComponent },
       { path: 'add', component: AddHotelComponent },
-      { path: 'delete', component: DeleteHotelComponent },
       { path: 'update', component: UpdateHotelComponent },
     ],
   }
