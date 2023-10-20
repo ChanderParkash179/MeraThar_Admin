@@ -11,7 +11,7 @@ const routes: Routes = [
       { path: '', component: CityListComponent },
       { path: 'list', component: CityListComponent },
       { path: 'add', component: AddCityComponent },
-      { path: 'update', component: UpdateCityComponent },
+      { path: 'update/:id', component: UpdateCityComponent },
     ],
   }
 ];

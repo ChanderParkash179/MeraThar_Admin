@@ -21,7 +21,15 @@ export class CityService {
     return this._http.post<Response>(`${this.BASE_URL}/city/save`, { name });
   }
 
+  updateCity(city: City): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/update`, city);
+  }
+
   deleteCity(id: number): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/delete`, { id });
+  }
+
+  getCityById(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/get/id`, { id });
   }
 }

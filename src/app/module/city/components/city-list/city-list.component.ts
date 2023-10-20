@@ -67,7 +67,7 @@ export class CityListComponent implements OnInit {
     this.deleteCity(id);
   }
 
-  onUpdate() {
-    this._router.navigate(['city/update']);
+  onUpdate(id: any) {
+    this._router.navigate(['city/update', id]);
   }
 }
