@@ -49,7 +49,7 @@
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" id="btn" [disabled]="!locationForm.valid"
-                                class="btn btn-primary p-2 text-light">Save</button>
+                                class="btn btn-primary p-2 text-light" (keyup.enter)="addLocation()">Save</button>
                         </div>
                     </div>
                 </form>

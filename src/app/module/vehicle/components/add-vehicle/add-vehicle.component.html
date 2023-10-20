@@ -93,7 +93,7 @@
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" id="btn" [disabled]="!vehicleForm.valid"
-                                class="btn btn-primary p-2 text-light">Save</button>
+                                class="btn btn-primary p-2 text-light" (keyup.enter)="addVehicle()">Save</button>
                         </div>
                     </div>
                 </form>
