@@ -7,6 +7,7 @@ import { AddHotelComponent } from './components/add-hotel/add-hotel.component';
 import { DeleteHotelComponent } from './components/delete-hotel/delete-hotel.component';
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     HotelRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ]
 })
 export class HotelModule { }

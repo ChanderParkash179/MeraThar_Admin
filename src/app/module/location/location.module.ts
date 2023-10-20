@@ -7,6 +7,7 @@ import { UpdateLocationComponent } from './components/update-location/update-loc
 import { LocationListComponent } from './components/location-list/location-list.component';
 import { AddLocationComponent } from './components/add-location/add-location.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     LocationRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ]
 })
 export class LocationModule { }

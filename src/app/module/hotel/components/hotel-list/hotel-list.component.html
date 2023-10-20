@@ -14,7 +14,7 @@
                             <th>Address</th>
                             <th>Phone</th>
                             <th>Rating</th>
-                            <th>Delete</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,8 +24,10 @@
                             <td><a [href]="hotel.address" target="_blank">{{ hotel.address }}</a></td>
                             <td>{{ hotel.phone || 'NULL' }}</td>
                             <td>{{ hotel.rating }} ☆</td>
-                            <td><button type="button" (click)="onDelete(hotel.id)"
-                                    class="btn btn-danger p-1 text-light">Delete</button>
+                            <td>
+                                <fa-icon class="mx-2 text-danger" [icon]="deleteIcon"
+                                    (click)="onDelete(hotel.id)"></fa-icon>
+                                <fa-icon class="mx-2 text-warning" [icon]="updateIcon" (click)="onUpdate()"></fa-icon>
                             </td>
                         </tr>
                     </tbody>

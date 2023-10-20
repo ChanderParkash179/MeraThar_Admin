@@ -156,3 +156,11 @@ thead th.active,
 tbody td.active {
     color: #6c00bd;
 }
+
+#male-gender-color {
+    color: blue;
+}
+
+#female-gender-color {
+    color: deeppink;
+}

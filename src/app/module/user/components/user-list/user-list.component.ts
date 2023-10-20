@@ -3,6 +3,7 @@ import { UserService } from '../../service/user.service';
 import { User } from 'src/app/model/user';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { faMars, faPencil, faTrash, faVenus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-list',
@@ -21,6 +22,12 @@ export class UserListComponent implements OnInit {
 
   responseCode?: string;
   responseMessage?: string;
+
+  deleteIcon = faTrash;
+  updateIcon = faPencil;
+
+  maleIcon = faMars;
+  femaleIcon = faVenus;
 
   getUsers() {
     this._userService.fetchUsers().subscribe((response: any) => {
@@ -61,5 +68,9 @@ export class UserListComponent implements OnInit {
 
   onDelete(email: any) {
     this.deleteUser(email);
+  }
+
+  onUpdate() {
+    this._router.navigate(['user/update']);
   }
 }

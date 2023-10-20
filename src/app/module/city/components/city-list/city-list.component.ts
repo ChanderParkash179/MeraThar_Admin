@@ -3,6 +3,7 @@ import { City } from 'src/app/model/city';
 import { CityService } from '../../service/city.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-city-list',
@@ -21,6 +22,9 @@ export class CityListComponent implements OnInit {
 
   responseCode?: string;
   responseMessage?: string;
+
+  deleteIcon = faTrash;
+  updateIcon = faPencil;
 
   getCities() {
     this._cityService.fetchCities().subscribe((response: any) => {
@@ -61,5 +65,9 @@ export class CityListComponent implements OnInit {
 
   onDelete(id: any) {
     this.deleteCity(id);
+  }
+
+  onUpdate() {
+    this._router.navigate(['city/update']);
   }
 }

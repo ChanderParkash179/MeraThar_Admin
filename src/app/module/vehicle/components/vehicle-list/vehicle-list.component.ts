@@ -3,6 +3,7 @@ import { VehicleService } from '../../service/vehicle.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Vehicle } from 'src/app/model/vehicle';
 import { Router } from '@angular/router';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -21,6 +22,9 @@ export class VehicleListComponent implements OnInit {
 
   responseCode?: string;
   responseMessage?: string;
+
+  deleteIcon = faTrash;
+  updateIcon = faPencil;
 
   getVehicles() {
     this._vehicleService.fetchVehicles().subscribe((response: any) => {
@@ -62,5 +66,9 @@ export class VehicleListComponent implements OnInit {
 
   onDelete(id: any) {
     this.deleteVehicle(id);
+  }
+
+  onUpdate() {
+    this._router.navigate(['vehicle/update']);
   }
 }

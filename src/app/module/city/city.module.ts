@@ -7,6 +7,7 @@ import { DeleteCityComponent } from './components/delete-city/delete-city.compon
 import { UpdateCityComponent } from './components/update-city/update-city.component';
 import { CityListComponent } from './components/city-list/city-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     CityRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ]
 })
 export class CityModule { }

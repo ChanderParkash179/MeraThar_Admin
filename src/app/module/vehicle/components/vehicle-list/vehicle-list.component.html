@@ -16,7 +16,7 @@
                             <th>Rating</th>
                             <th>Transport</th>
                             <th>Type</th>
-                            <th>Delete</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,8 +28,10 @@
                             <td>{{ vehicle.rating }} ☆</td>
                             <td>{{ vehicle.transport }}</td>
                             <td>{{ vehicle.type }}</td>
-                            <td><button type="button" (click)="onDelete(vehicle.id)"
-                                    class="btn btn-danger p-1 text-light">Delete</button>
+                            <td>
+                                <fa-icon class="mx-2 text-danger" [icon]="deleteIcon"
+                                    (click)="onDelete(vehicle.id)"></fa-icon>
+                                <fa-icon class="mx-2 text-warning" [icon]="updateIcon" (click)="onUpdate()"></fa-icon>
                             </td>
                         </tr>
                     </tbody>

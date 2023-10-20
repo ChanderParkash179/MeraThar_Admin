@@ -3,6 +3,7 @@ import { Restaurant } from 'src/app/model/restaurant';
 import { RestaurantService } from '../../service/restaurant.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -21,6 +22,9 @@ export class RestaurantListComponent implements OnInit {
 
   responseCode?: string;
   responseMessage?: string;
+
+  deleteIcon = faTrash;
+  updateIcon = faPencil;
 
   getRestaurants() {
     this._restaurantService.fetchRestaurants().subscribe((response: any) => {
@@ -61,5 +65,9 @@ export class RestaurantListComponent implements OnInit {
 
   onDelete(id: any) {
     this.deleteRestaurant(id);
+  }
+
+  onUpdate() {
+    this._router.navigate(['restaurant/update']);
   }
 }

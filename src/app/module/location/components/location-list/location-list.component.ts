@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from 'src/app/model/location';
 import { LocationService } from '../../service/location.service';
 import { Router } from '@angular/router';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-location-list',
@@ -21,6 +22,9 @@ export class LocationListComponent implements OnInit {
 
   responseCode?: string;
   responseMessage?: string;
+
+  deleteIcon = faTrash;
+  updateIcon = faPencil;
 
   getLocations() {
     this._locationService.fetchLocations().subscribe((response: any) => {
@@ -61,5 +65,9 @@ export class LocationListComponent implements OnInit {
 
   onDelete(id: any) {
     this.deleteLocation(id);
+  }
+
+  onUpdate() {
+    this._router.navigate(['location/update']);
   }
 }

@@ -3,6 +3,7 @@ import { HotelService } from '../../service/hotel.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Hotel } from 'src/app/model/hotel';
 import { Router } from '@angular/router';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-hotel-list',
@@ -21,6 +22,9 @@ export class HotelListComponent implements OnInit {
 
   responseCode?: string;
   responseMessage?: string;
+
+  deleteIcon = faTrash;
+  updateIcon = faPencil;
 
   getHotels() {
     this._hotelService.fetchHotels().subscribe((response: any) => {
@@ -61,5 +65,9 @@ export class HotelListComponent implements OnInit {
 
   onDelete(id: any) {
     this.deleteHotel(id);
+  }
+
+  onUpdate() {
+    this._router.navigate(['hotel/update']);
   }
 }
