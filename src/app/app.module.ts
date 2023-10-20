@@ -15,6 +15,7 @@ import { LocationModule } from './module/location/location.module';
 import { HomeModule } from './module/home/home.module';
 import { HotelModule } from './module/hotel/hotel.module';
 import { RestaurantModule } from './module/restaurant/restaurant.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RestaurantModule } from './module/restaurant/restaurant.module';
     VehicleModule,
     LocationModule,
     HotelModule,
-    RestaurantModule
+    RestaurantModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
