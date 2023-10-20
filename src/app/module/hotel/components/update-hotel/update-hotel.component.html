@@ -1,1 +1,65 @@
-<p>update-hotel works!</p>
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <section class="table__body p-5">
+                <form [formGroup]="hotelForm" (ngSubmit)="updateHotel()">
+                    <div class="row p-2">
+                        <div class="alert">
+                            <div *ngIf="responseCode === 'SUCCESS_201'" class="alert alert-success p-2" role="alert">
+                                {{ responseMessage }}
+                            </div>
+                            <div *ngIf="responseCode === ''" class=" alert alert-warning p-2" role="alert">
+                                {{ responseMessage }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-header">
+                        <h1 class="text-center">Add Hotel</h1>
+                    </div>
+                    <div id="form-container">
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forHotelName" class="form-label m-1"><strong>Enter Name</strong></label>
+                                <input type="text" class="form-control p-2" id="forHotelName" formControlName="name"
+                                    required [placeholder]="enterName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forHotelAddress" class="form-label m-1"><strong>Enter
+                                        Address</strong></label>
+                                <input type="text" class="form-control p-2" id="forHotelAddress"
+                                    formControlName="address" required [placeholder]="enterAddress">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forHotelPhone" class="form-label m-1"><strong>Enter Phone</strong></label>
+                                <input type="text" class="form-control p-2" id="forHotelPhone" formControlName="phone"
+                                    required [placeholder]="enterPhone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forHotelRating" class="form-label m-1"><strong>Enter Rating</strong></label>
+                                <input type="number" class="form-control p-2" id="forHotelRating"
+                                    formControlName="rating" required [placeholder]="enterRating">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forHotelCity" class="form-label m-1"><strong>Enter City</strong></label>
+                                <input type="text" class="form-control p-2" id="forHotelCity" formControlName="city"
+                                    required [placeholder]="enterCity">
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" id="btn" [disabled]="!hotelForm.valid"
+                                class="btn btn-warning p-2 text-light" (keyup.enter)="updateHotel()">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>

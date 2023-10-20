@@ -11,7 +11,7 @@ const routes: Routes = [
       { path: '', component: HotelListComponent },
       { path: 'list', component: HotelListComponent },
       { path: 'add', component: AddHotelComponent },
-      { path: 'update', component: UpdateHotelComponent },
+      { path: 'update/:id', component: UpdateHotelComponent },
     ],
   }
 ];

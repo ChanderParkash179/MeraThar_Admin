@@ -21,7 +21,15 @@ export class HotelService {
     return this._http.post<Response>(`${this.BASE_URL}/city/hotel/save`, hotel);
   }
 
+  updateHotel(hotel: Hotel): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/hotel/update`, hotel);
+  }
+
   deleteHotel(id: number): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/hotel/delete`, { id });
+  }
+
+  getHotelById(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/hotel/get/id`, { id });
   }
 }

@@ -67,7 +67,7 @@ export class HotelListComponent implements OnInit {
     this.deleteHotel(id);
   }
 
-  onUpdate() {
-    this._router.navigate(['hotel/update']);
+  onUpdate(id: any) {
+    this._router.navigate(['hotel/update', id]);
   }
 }
