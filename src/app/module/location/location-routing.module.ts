@@ -11,7 +11,7 @@ const routes: Routes = [
       { path: '', component: LocationListComponent },
       { path: 'list', component: LocationListComponent },
       { path: 'add', component: AddLocationComponent },
-      { path: 'update', component: UpdateLocationComponent },
+      { path: 'update/:id', component: UpdateLocationComponent },
     ],
   }
 ];

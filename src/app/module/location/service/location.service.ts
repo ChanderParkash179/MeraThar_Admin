@@ -24,4 +24,12 @@ export class LocationService {
   deleteLocation(id: number): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/tourist-point/delete`, { id });
   }
+
+  getLocationById(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/tourist-point/get/id`, { id });
+  }
+
+  updateLocation(location: Location): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/tourist-point/update`, location);
+  }
 }

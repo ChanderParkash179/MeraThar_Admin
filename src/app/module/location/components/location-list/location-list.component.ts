@@ -67,7 +67,7 @@ export class LocationListComponent implements OnInit {
     this.deleteLocation(id);
   }
 
-  onUpdate() {
-    this._router.navigate(['location/update']);
+  onUpdate(id: any) {
+    this._router.navigate(['location/update', id]);
   }
 }
