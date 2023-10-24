@@ -67,7 +67,7 @@ export class RestaurantListComponent implements OnInit {
     this.deleteRestaurant(id);
   }
 
-  onUpdate() {
-    this._router.navigate(['restaurant/update']);
+  onUpdate(id: any) {
+    this._router.navigate(['restaurant/update', id]);
   }
 }

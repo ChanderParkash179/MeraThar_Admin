@@ -11,7 +11,7 @@ const routes: Routes = [
       { path: '', component: RestaurantListComponent },
       { path: 'list', component: RestaurantListComponent },
       { path: 'add', component: AddRestaurantComponent },
-      { path: 'update', component: UpdateRestaurantComponent },
+      { path: 'update/:id', component: UpdateRestaurantComponent },
     ],
   }
 ];

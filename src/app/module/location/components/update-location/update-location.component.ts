@@ -49,7 +49,7 @@ export class UpdateLocationComponent implements OnInit {
         name: this.locationForm.value.name,
         location: this.locationForm.value.location,
         description: this.locationForm.value.description,
-        cit: this.locationForm.value.city
+        city: this.locationForm.value.city
       };
 
       this._locationService.updateLocation(location).subscribe((response: any) => {

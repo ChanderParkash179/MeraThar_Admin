@@ -24,4 +24,12 @@ export class RestaurantService {
   deleteRestaurant(id: number): Observable<Response> {
     return this._http.post<Response>(`${this.BASE_URL}/city/restaurant/delete`, { id });
   }
+
+  updateRestaurant(restaurant: Restaurant): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/restaurant/update`, restaurant);
+  }
+
+  getRestaurantById(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/restaurant/get/id`, { id });
+  }
 }
