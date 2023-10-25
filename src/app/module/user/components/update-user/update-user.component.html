@@ -1,1 +1,75 @@
-<p>update-user works!</p>
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <section class="table__body p-5">
+                <form [formGroup]="userForm" (ngSubmit)="editUser()">
+                    <div class="row p-2">
+                        <div class="alert">
+                            <div *ngIf="responseCode === 'SUCCESS_201'" class="alert alert-success p-2" role="alert">
+                                {{ responseMessage }}
+                            </div>
+                            <div *ngIf="responseCode === ''" class=" alert alert-warning p-2" role="alert">
+                                {{ responseMessage }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-header">
+                        <h1 class="text-center">Add User</h1>
+                    </div>
+                    <div id="form-container">
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forUserFirstName" class="form-label m-1"><strong>Enter First
+                                        Name</strong></label>
+                                <input type="text" class="form-control p-2" id="forUserFirstName"
+                                    formControlName="firstName" required [placeholder]="enterFirstName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forUserLastName" class="form-label m-1"><strong>Enter Last
+                                        Name</strong></label>
+                                <input type="text" class="form-control p-2" id="enterLastName"
+                                    formControlName="lastName" required [placeholder]="enterLastName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forUserEmail" class="form-label m-1"><strong>Enter Email</strong></label>
+                                <input type="email" class="form-control p-2" id="forUserEmail" formControlName="email"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="forUserPassword" class="form-label m-1"><strong>Enter
+                                        Password</strong></label>
+                                <input type="password" class="form-control p-2" id="forUserPassword"
+                                    formControlName="password" required [placeholder]="enterPassword">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label class="form-label m-1"><strong>Enter Gender</strong></label>
+                                <div id="genderSelection">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="male" formControlName="gender"
+                                            value="MALE" checked>Male
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="female"
+                                            formControlName="gender" value="FEMALE">Female
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" id="btn" [disabled]="!userForm.valid"
+                            class="btn btn-warning p-2 text-light" (keyup.enter)="editUser()">Edit</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>

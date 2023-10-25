@@ -36,7 +36,8 @@
                             <td>
                                 <fa-icon class="mx-2 text-danger" [icon]="deleteIcon"
                                     (click)="onDelete(user.email)"></fa-icon>
-                                <fa-icon class="mx-2 text-warning" [icon]="updateIcon" (click)="onUpdate()"></fa-icon>
+                                <fa-icon class="mx-2 text-warning" [icon]="updateIcon"
+                                    (click)="onUpdate(user.email)"></fa-icon>
                             </td>
                         </tr>
                     </tbody>

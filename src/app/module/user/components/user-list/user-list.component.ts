@@ -70,7 +70,7 @@ export class UserListComponent implements OnInit {
     this.deleteUser(email);
   }
 
-  onUpdate() {
-    this._router.navigate(['user/update']);
+  onUpdate(email: any) {
+    this._router.navigate(['user/update', email]);
   }
 }

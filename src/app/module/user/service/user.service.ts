@@ -26,5 +26,13 @@ export class UserService {
     return this._http.post<Response>(`${this.BASE_URL}/user/delete`, { email });
   }
 
+  editUser(user: User): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/user/edit`, user);
+  }
+
+  getUserByEmail(email: any): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/user/email`, { email });
+  }
+
 
 }
