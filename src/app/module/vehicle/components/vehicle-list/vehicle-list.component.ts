@@ -68,7 +68,7 @@ export class VehicleListComponent implements OnInit {
     this.deleteVehicle(id);
   }
 
-  onUpdate() {
-    this._router.navigate(['vehicle/update']);
+  onUpdate(id: any) {
+    this._router.navigate(['vehicle/update', id]);
   }
 }

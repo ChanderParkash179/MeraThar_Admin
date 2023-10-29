@@ -25,4 +25,12 @@ export class VehicleService {
     return this._http.post<Response>(`${this.BASE_URL}/city/vehicle/delete`, { id });
   }
 
+  updateVehicle(vehicle: Vehicle): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/vehicle/update`, vehicle);
+  }
+
+  getVehicleById(id: number): Observable<Response> {
+    return this._http.post<Response>(`${this.BASE_URL}/city/vehicle/get/id`, { id });
+  }
+
 }
